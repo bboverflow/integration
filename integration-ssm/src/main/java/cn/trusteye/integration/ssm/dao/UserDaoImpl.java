@@ -12,7 +12,7 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
     @Override
     public User findUserById(int id) throws Exception {
         SqlSession sqlSession = this.getSqlSession();
-        User user = sqlSession.selectOne("user.findUserById");
+        User user = sqlSession.selectOne("user.findUserById",id);
         return user;
     }
 }
